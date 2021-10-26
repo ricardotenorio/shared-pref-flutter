@@ -10,7 +10,7 @@ class UserController {
     await preferences.setString(key, value);
   }
 
-  read(String key) async {
+  Future<List<dynamic>> read(String key) async {
     final preferences = await SharedPreferences.getInstance();
 
     return json.decode
